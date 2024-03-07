@@ -1,0 +1,65 @@
+notes: ""
+dataset: "mnist"
+gen_data: True
+no_labels: False
+in_data_loc: ""
+data_amount: 11000
+public_data_amount: 64
+binary: True
+pca_dims: 0
+model: "linear"
+same_rng: False
+do_accounting: True
+plot_grads: True
+verbosity: 1
+do_static_standardize: False
+do_fam: True
+fisher_iters: 2
+fisher_batch_size: 2
+prune_strat: "magnitude"
+prune_dense: 0.5
+prune_only_grads: True
+do_attack: True
+pretrain:
+  batch_size: 1024
+  momentum_mass: 0.0
+  num_epochs: 0
+  optimizer: "adam"
+  step_size: 0.01
+  weight_decay: 0.01
+final:
+  batch_size: 1024
+  momentum_mass: 0.0
+  num_epochs: 2
+  optimizer: "adam"
+  step_size: 0.1
+  weight_decay: 0.0
+  sigma: 0.05
+  norm_clip: 10
+  delta: 1e-9
+reg:
+  model: "cnn_aux_reg"
+  batch_size: 64
+  momentum_mass: 0.0
+  num_epochs: 2
+  epoch_decay: 50
+  min_batch_epochs: 2
+  optimizer: "adam"
+  step_size: 0.01
+  weight_decay: 0.1
+  lam: 1e3
+  lam_decay: 1e2
+  min_lam: 1e1
+  lam_pow: 2
+  fisher_iters: 2
+  fisher_batch_size: 2
+attack:
+  test_samples: 500
+  train_samples: 9500
+  model: "mlp"
+  batch_size: 64
+  momentum_mass: 0.0
+  num_epochs: 100
+  optimizer: "adam"
+  step_size: 0.001
+  weight_decay: 0.1
